@@ -1,0 +1,4 @@
+forge "http://forge.puppetlabs.com"
+
+mod "puppetlabs/nodejs"
+mod "puppetlabs/git"

@@ -1,0 +1,23 @@
+@import "compass/css3";
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,latin-ext);
+
+$font: 'Open Sans', sans-serif !important;
+
+body {
+  font-family: $font;
+}
+
+#{headers(all)} {
+  font-family: $font;
+}
+
+.logo {
+  $logo: 'http://phonegap.com/uploads/artwork/Build-Bot2.png';
+
+  display: inline-block;
+  background-image: image-url($logo);
+  @include background-size(contain);
+}
+
+@import "page-auth";

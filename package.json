@@ -1,0 +1,26 @@
+{
+  "name": "gy-phonegap-build-ui",
+  "version": "0.1.0",
+  "description": "Geleceği Yazanlar PhoneGap Build Yönetim Arabirimi",
+  "homepage": "http://turkcell.github.io/gy-phonegap-build-ui/",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Turkcell/gy-phonegap-build-ui.git"
+  },
+  "author": {
+    "name": "Erhan Abay",
+    "email": "erhan.abay@mc2.com.tr",
+    "url": "http://mc2.com.tr"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Turkcell/gy-phonegap-build-ui/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-concurrent": "~0.3.1",
+    "grunt-contrib-compass": "~0.5.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-connect": "~0.5.0"
+  }
+}
