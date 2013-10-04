@@ -23,7 +23,7 @@ define([
 
             el.closest('.form-group')
                 .toggleClass('has-error', errorMessage.length > 0)
-              .find('.help-block')
+              .find('.help-block:first')
                 .html(errorMessage);
         },
 
@@ -43,7 +43,7 @@ define([
 
                     el.closest('.form-group')
                         .addClass('has-error')
-                      .find('.help-block')
+                      .find('.help-block:first')
                         .html(error);
                 });
             } else {
