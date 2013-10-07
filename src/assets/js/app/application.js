@@ -58,10 +58,10 @@ define([
         },
 
         initialize: function() {
-            this.views.login.on('login:success', this._onLoginSuccess, this);
-
             this._configureBackboneValidation();
             this._setBaseUrlForAjaxRequests();
+
+            this.views.login.on('login:success', this._onLoginSuccess, this);
 
             B.history.start();
         },
