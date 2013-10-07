@@ -17,6 +17,7 @@ define([
         initialize: function() {
             this._configureBackboneValidation();
             this._setBaseUrlForAjaxRequests();
+            this._autoRedirectLoginRouteIfForbidden();
 
             this.user = new User();
 
@@ -25,6 +26,8 @@ define([
                 login: new LoginView(),
                 register: new RegisterView()
             };
+
+            this.views.home.user = this.user;
 
             this.views.login.on('login:success', this._onLoginSuccess, this);
 
@@ -60,6 +63,16 @@ define([
             });
         },
 
+        _autoRedirectLoginRouteIfForbidden: function() {
+            var me = this;
+
+            B.$(document).ajaxError(function(e, xhr) {
+                if (xhr.status === 403) {
+                    me.navigate('login', {trigger: true});
+                }
+            });
+        },
+
         _onLoginSuccess: function(data) {
             this.user.set(data);
 
@@ -71,17 +84,8 @@ define([
         },
 
         home: function() {
-            var me = this;
-
             this.user.fetch({
-                error: function() {
-                    me.navigate('login', {trigger: true});
-                },
-                success: function() {
-                    me.views.home.model = me.user;
-
-                    me.render('home');
-                }
+                success: _.bind(this.render, this, 'home')
             });
         },
 
