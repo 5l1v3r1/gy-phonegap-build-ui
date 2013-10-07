@@ -14,6 +14,23 @@ define([
             register: 'register'
         },
 
+        initialize: function() {
+            this._configureBackboneValidation();
+            this._setBaseUrlForAjaxRequests();
+
+            this.user = new User();
+
+            this.views = {
+                home: new HomeView(),
+                login: new LoginView(),
+                register: new RegisterView()
+            };
+
+            this.views.login.on('login:success', this._onLoginSuccess, this);
+
+            B.history.start();
+        },
+
         _configureBackboneValidation: function() {
             _.extend(B.Model.prototype, B.Validation.mixin);
 
@@ -47,23 +64,6 @@ define([
             this.user.set(data);
 
             this.navigate('', {trigger: true});
-        },
-
-        initialize: function() {
-            this._configureBackboneValidation();
-            this._setBaseUrlForAjaxRequests();
-
-            this.user = new User();
-
-            this.views = {
-                home: new HomeView(),
-                login: new LoginView(),
-                register: new RegisterView()
-            };
-
-            this.views.login.on('login:success', this._onLoginSuccess, this);
-
-            B.history.start();
         },
 
         render: function(view) {
