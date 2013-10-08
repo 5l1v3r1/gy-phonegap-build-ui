@@ -4,9 +4,10 @@ define([
     './models/user',
     './models/session',
     './views/home',
+    './views/error',
     './views/login',
     './views/register'
-], function(B, _, User, Session, HomeView, LoginView, RegisterView) {
+], function(B, _, User, Session, HomeView, ErrorView, LoginView, RegisterView) {
     var Application = B.Router.extend({
         routes: {
             '': 'home',
@@ -30,6 +31,8 @@ define([
             this.views.home.user = this.user;
 
             this.views.login.on('login:success', this._onLoginSuccess, this);
+
+            new ErrorView();
 
             B.history.start();
         },
