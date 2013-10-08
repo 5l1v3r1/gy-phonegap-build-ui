@@ -79,26 +79,26 @@ define([
             this.navigate('', {trigger: true});
         },
 
-        render: function(view) {
+        _render: function(view) {
             B.$('#page-wrapper').html(this.views[view].render().el);
         },
 
         home: function() {
             this.user.fetch({
-                success: _.bind(this.render, this, 'home')
+                success: _.bind(this._render, this, 'home')
             });
         },
 
         login: function() {
             this.views.login.model = new Session();
 
-            this.render('login');
+            this._render('login');
         },
 
         register: function() {
             this.views.register.model = this.user;
 
-            this.render('register');
+            this._render('register');
         }
     });
 
