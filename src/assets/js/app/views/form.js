@@ -20,9 +20,11 @@ define([
             var el = B.$(e.currentTarget);
 
             var errorMessage = this.model.preValidate(el.attr('name'), el.val());
+            var hasError = !!errorMessage;
 
             el.closest('.form-group')
-                .toggleClass('has-error', errorMessage.length > 0)
+                .toggleClass('has-error', hasError)
+                .toggleClass('has-success', !hasError)
               .find('.help-block:first')
                 .html(errorMessage);
         },
