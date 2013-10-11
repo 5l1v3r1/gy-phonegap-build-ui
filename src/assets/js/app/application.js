@@ -31,6 +31,7 @@ define([
             this.views.home.user = this.user;
 
             this.views.login.on('login:success', this._onLoginSuccess, this);
+            this.views.register.on('register:success', this._onLoginSuccess, this);
 
             new ErrorView();
 
