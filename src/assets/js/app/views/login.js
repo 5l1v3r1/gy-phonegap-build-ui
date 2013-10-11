@@ -6,7 +6,7 @@ define([
         template: tpl,
 
         initialize: function() {
-            this.on('login:fail', this.onLoginFail, this);
+            this.on('login:fail', this.onSubmitFail, this);
         },
 
         submit: function() {
@@ -22,7 +22,7 @@ define([
             });
         },
 
-        onLoginFail: function(message) {
+        onSubmitFail: function(message) {
             this.$('.alert').html(message).removeClass('hide');
         }
     });
