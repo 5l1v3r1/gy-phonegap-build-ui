@@ -1,6 +1,7 @@
 require.config({
     baseUrl: 'assets',
     paths: {
+        config: '../config.json',
         tpl: '../templates',
         text: 'vendor/requirejs-text/text',
         jquery: 'vendor/jquery/jquery',

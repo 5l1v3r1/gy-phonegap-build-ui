@@ -1,13 +1,14 @@
 define([
     'backbone',
     'underscore',
+    'js/config',
     './models/user',
     './models/session',
     './views/home',
     './views/error',
     './views/login',
     './views/register'
-], function(B, _, User, Session, HomeView, ErrorView, LoginView, RegisterView) {
+], function(B, _, config, User, Session, HomeView, ErrorView, LoginView, RegisterView) {
     var Application = B.Router.extend({
         routes: {
             '': 'home',
@@ -60,7 +61,7 @@ define([
 
         _setBaseUrlForAjaxRequests: function() {
             B.$.ajaxPrefilter(function(options) {
-                options.url = 'http://162.13.112.150:8080/' + options.url;
+                options.url = config.service_url + '/' + options.url;
                 options.xhrFields = {
                     withCredentials: true
                 }
