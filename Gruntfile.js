@@ -87,6 +87,13 @@ module.exports = function(grunt) {
             dist: {
                 src: '<%= paths.tmp %>/index.html'
             }
+        },
+        'gh-pages': {
+            options: {
+                base: '<%= paths.dist %>',
+                repo: '<%= grunt.file.readJSON("package.json").repository.url %>'
+            },
+            src: '**/*'
         }
     });
 
@@ -98,6 +105,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-requirejs');
     grunt.loadNpmTasks('grunt-htmlrefs');
+    grunt.loadNpmTasks('grunt-gh-pages');
 
     grunt.registerTask('default', ['concurrent']);
     grunt.registerTask('build', ['clean', 'copy:tmp', 'compass:dist', 'requirejs', 'htmlrefs', 'copy:dist', 'clean:tmp']);
