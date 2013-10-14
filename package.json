@@ -5,7 +5,7 @@
   "homepage": "http://turkcell.github.io/gy-phonegap-build-ui/",
   "repository": {
     "type": "git",
-    "url": "git://github.com/Turkcell/gy-phonegap-build-ui.git"
+    "url": "https://github.com/Turkcell/gy-phonegap-build-ui.git"
   },
   "author": {
     "name": "Erhan Abay",
