@@ -18,15 +18,15 @@ require.config({
             deps: ['underscore', 'jquery'],
             exports: 'Backbone'
         },
-        bootstrap: ['jquery'],
-        'js/app/application': [
-            'js/plugins',
-            'bootstrap',
-            'backbone-validation'
-        ]
+        bootstrap: ['jquery']
     }
 });
 
-require(['js/app/application'], function(Application) {
+require([
+    'js/app/application',
+    'js/plugins',
+    'bootstrap',
+    'backbone-validation'
+], function(Application) {
     new Application();
 });
