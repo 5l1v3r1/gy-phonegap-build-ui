@@ -4,3 +4,5 @@ node_modules
 src/config.json
 src/assets/.sass-cache
 src/assets/vendor
+dist
+tmp
