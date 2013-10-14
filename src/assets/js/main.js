@@ -8,7 +8,7 @@ require.config({
         underscore: 'vendor/underscore/underscore',
         backbone: 'vendor/backbone/backbone',
         'backbone-validation': 'vendor/backbone-validation/dist/backbone-validation-amd',
-        bootstrap: 'vendor/bootstrap/dist/js/bootstrap'
+        bootstrap: 'vendor/sass-bootstrap/dist/js/bootstrap'
     },
     shim: {
         underscore: {
