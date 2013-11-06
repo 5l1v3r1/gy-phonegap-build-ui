@@ -13,7 +13,8 @@ define([
                 phonegap_version: raw.application.applicationConfig.phoneGapversion,
                 name: raw.application.applicationConfig.applicationName,
                 icon_url: raw.application.iconURL,
-                built_targets: raw.builtTargets
+                built_targets: raw.builtTargets,
+                qr_code_url: raw.application.qrCodeURL
             };
 
             return data;
