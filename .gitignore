@@ -1,4 +1,5 @@
 .idea
+.grunt
 .vagrant
 node_modules
 src/config.json
